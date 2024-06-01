@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core'; //C) carica modulo Input
 
 @Component({
   selector: 'app-page-list',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './page-list.component.css'
 })
 export class PageListComponent {
+@Input() resultPages: any = []; //D)inizializza con decoratore Input attributo che verrà ricevuto dal Parent
 
 }
