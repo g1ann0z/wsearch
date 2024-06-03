@@ -8,9 +8,15 @@
     </thead>
     <tbody>
         <tr *ngFor="let page of resultPages">
-            <td>{{ page.title }}</td>
+            <td>
+                <a 
+                    target="_blank"
+                    [href]="'https://it.wikipedia.org?curid=' + page.pageid"> <!-- wrappiamo il titolo con link della pagina diretta -->
+                    {{ page.title }}
+                </a>
+            </td>
             <td>{{ page.wordcount }}</td>
-            <td>{{ page.snippet }}</td>
+            <td [innerHTML]="page.snippet"></td> <!-- modifica per aggirare il controllo angular vs XSS attack -->
         </tr>
     </tbody>
 </table>

@@ -1,5 +1,6 @@
-<app-search-bar (submitted)="onTerm($event)"></app-search-bar>
-
-<app-page-list [resultPages]="pages"></app-page-list>
-<!-- decidiamo il nome dell'attributo che passiamo [resultPages]
-    e con quello passiamo al child la variabile di classe "pages" -->
+<div class="container">
+    <app-search-bar (submitted)="onTerm($event)"></app-search-bar>
+    <app-page-list *ngIf="pages.length" [resultPages]="pages"></app-page-list>
+        <!-- decidiamo il nome dell'attributo che passiamo [resultPages]
+        e con quello passiamo al child la variabile di classe "pages" -->
+</div>
